@@ -31,24 +31,27 @@ function mkcode() {
 }
 
 # Updates the system
-function upall() {
-	if type yay &>/dev/null; then
-		yay -Syu
-	else
-		sudo pacman -Syu
-	fi
-	if type rustup &>/dev/null; then
-		rustup update
-	fi
-	if type npm &>/dev/null; then
-		sudo npm update -g npm
-	fi
-	if type composer &>/dev/null; then
-		sudo composer self-update
-	fi
-	if type ghcup &>/dev/null; then
-		ghcup upgrade
-	fi
+function sysup() {
+    if type yay &> /dev/null; then
+        yay -Syu
+    else
+        sudo pacman -Syu
+    fi
+    if type rustup &> /dev/null; then
+        rustup update
+    fi
+    if type npm &> /dev/null; then
+        sudo npm update -g npm
+    fi
+    if type composer &> /dev/null; then
+        sudo composer self-update
+    fi
+    if type ghcup &> /dev/null; then
+        ghcup upgrade
+    fi
+    if type omz &> /dev/null; then
+        omz update
+    fi
 }
 
 # Starts mysql server and symfony server
