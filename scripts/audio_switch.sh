@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
 # Switches to the next audio device.
+#
+# Usage:
+# `./audio_switch.sh`
 
 devices=($(pactl list short sinks | awk '{print $2}'));
 active=$(pactl get-default-sink);
