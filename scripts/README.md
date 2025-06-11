@@ -11,14 +11,16 @@ you don't have to write the full path of the script.
 
 ## Installation
 
-If you want to move the scripts to the `~/.local/bin` folder, you can run the
-`install.sh` script:
+You can use the `install.sh` script to copy the scripts without `.sh` extension
+to given folder *(if no folder is given, it uses `/usr/local/bin` by default).*
 
 ```bash
 chmod +x ./install.sh
 ./install.sh
+# Or: ./install.sh /your/bin/folder
 ```
 
 ## List
 - `audio_switch.sh`: switches between audio devices.
 - `definition.sh`: prints definitions of given word.
+- `extract.sh`: extracts given archive *(supports multiple archive types)*.

@@ -18,6 +18,10 @@ export CC=clang
 export CXX=clang++
 export EDITOR=nvim
 
+# Aliases
+alias vim=nvim
+alias weather='curl -s "wttr.in/Brno?F"';
+
 # Creates directory and goes to it
 function mkcd() {
 	mkdir -p "$1"

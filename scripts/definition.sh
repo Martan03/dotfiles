@@ -52,4 +52,4 @@ echo "$query" | jq -r '
             "\u001b[37m\(.value.definition)\u001b[0m"
         )
     )
-'
+';

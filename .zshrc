@@ -28,6 +28,7 @@ export EDITOR=nvim
 
 # Aliases
 alias vim=nvim
+alias weather='curl -s "wttr.in/Brno?F"';
 
 # Functions
 
