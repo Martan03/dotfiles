@@ -12,7 +12,7 @@ The script also copies the config files and sets up other programs I use
 
 You will probably need to allow the installation script to run by running:
 ```bash
-sudo chmod +x install.sh
+chmod +x install.sh
 ```
 
 Then you can run the script itself:

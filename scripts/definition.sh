@@ -31,19 +31,25 @@ if [[ "$query" == *"No Definitions Found"* ]]; then
 fi
 
 echo "$query" | jq -r '
-    .[0] as $entry |
-    "\u001b[1m\u001b[97m\($entry.word)\u001b[0m \($entry.phonetic // "N/A")\n",
+    .[0] as $entry | (
+      ([ $entry.phonetic ] + ( $entry.phonetics // [] | map(.text) ))
+      | map(select(. != null and . != ""))
+      | unique
+      | join(" ")
+    ) as $phonetics
+    | "\u001b[1m\u001b[97m\($entry.word)\u001b[0m \($phonetics)\n",
     "\u001b[4mDefinitions:\u001b[0m",
-    ($entry.meanings[] |
+    ( $entry.meanings[] |
         "  [\(.partOfSpeech)]" + (
             if (.synonyms | length) > 0 then
                 " \u001b[30m~ " + (.synonyms | join(", ")) + "\u001b[0m"
             else
-                empty
+                ""
             end
         ),
-        (.definitions | to_entries[] |
+        ( .definitions | to_entries[] |
             "    \u001b[30m\u001b[1m\((.key + 1)).\u001b[0m " +
-            "\u001b[37m\(.value.definition)\u001b[0m")
+            "\u001b[37m\(.value.definition)\u001b[0m"
+        )
     )
-';
+'
