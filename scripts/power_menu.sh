@@ -1,11 +1,22 @@
 #!/usr/bin/bash
 
-choice=$(printf "Suspend\nShutdown\nReboot" | rofi -dmenu -p "Power Menu")
+theme="$HOME/.config/rofi/themes/kumuhana-powermenu.rasi"
+suspend=''
+shutdown=''
+reboot=''
+
+uptime=$(uptime -p | sed 's/up //')
+
+run_rofi() {
+    rofi -dmenu -p "Uptime: $uptime" -theme $theme
+}
+
+choice=$(printf "$suspend\n$shutdown\n$reboot" | run_rofi)
 
 case "$choice" in
-Shutdown) shutdown now ;;
-Reboot) systemctl reboot -i ;;
-Suspend)
+$shutdown) shutdown now ;;
+$reboot) systemctl reboot -i ;;
+$suspend)
     hyprlock &
     sleep 0.1 &
     systemctl suspend -i

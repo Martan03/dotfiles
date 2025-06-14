@@ -1,0 +1,94 @@
+configuration {
+    show-icons: false;
+}
+
+* {
+    background: #1a1b26;
+    trans-background: #1a1b26bb;
+    background-alt: #24283b;
+    background-light: #383c51;
+    foreground: #c0caf5;
+    selected: #3acbaf;
+    active: #1e6d5d;
+    urgent: #dd04f9;
+}
+
+window {
+    transparency: "real";
+    width: 440px;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: @selected;
+    background-color: @trans-background;
+}
+
+mainbox {
+    spacing: 15px;
+    margin: 0px;
+    padding: 30px;
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing: 10px;
+    background-color: transparent;
+    text-color: @foreground;
+    children: [ "textbox-prompt-colon", "prompt"];
+}
+
+dummy {
+    background-color: transparent;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    background-color: transparent;
+}
+
+prompt {
+    text-color: @foreground;
+    background-color: transparent;
+    padding: 0 0 5px 0;
+}
+
+error-message {
+    padding: 12px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+listview {
+    columns: 3;
+    lines: 1;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    spacing: 20px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element {
+    padding: 30px 10px;
+    border-radius: 100%;
+    border-color: @selected;
+    background-color: #00000060;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element-text {
+    font: "CaskaydiaCove NF 32";
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+}
+

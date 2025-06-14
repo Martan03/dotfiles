@@ -1,5 +1,3 @@
-/* This style was inspired from https://github.com/ahmad9059/dotfiles */
-
 * {
     background: #1a1b26;
     trans-background: #1a1b26bb;
@@ -87,7 +85,7 @@ element normal.urgent, element selected.active, element alternate.urgent {
     background-color: @urgent;
     text-color: @background;
 }
-
+ 
 element normal.active, element selected.urgent, element alternate.active {
     background-color: @active;
     text-color: @background;
