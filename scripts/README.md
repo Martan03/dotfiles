@@ -22,5 +22,7 @@ chmod +x ./install.sh
 
 ## List
 - `audio_switch.sh`: switches between audio devices.
+- `clipboard.sh`: displays clipboard history.
 - `definition.sh`: prints definitions of given word.
 - `extract.sh`: extracts given archive *(supports multiple archive types)*.
+- `power_menu.sh`: displays power menu *(suspend, shutdown, restart)*.
