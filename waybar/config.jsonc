@@ -8,6 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
+        "mpris",
     ],
     "modules-center": [
         "clock"
@@ -29,6 +30,21 @@
             "DP-3": [1, 2, 3],
             "DVI-D-1": [4, 5, 6]
         }
+    },
+    "mpris": {
+        "format": "{status_icon} {artist} - {title}",
+        "players": ["firefox", "spotify"],
+        "player-icons": {
+            "firefox": "",
+            "spotify": ""
+        },
+        "on-click": "playerctl play-pause",
+        "interval": 0,
+        "max-length": 40,
+        "status-icons": {
+            "playing": "",
+            "paused": ""
+        },
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -135,17 +151,12 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
+    "custom/playing": {
+        "format": "{}",
+        "exec": "playing",
+        "interval": 1,
         "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "on-click": "playerctl play-pause",
     },
     "custom/power": {
         "format" : "⏻",
