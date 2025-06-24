@@ -4,6 +4,9 @@
 # Sets the prompt style (name@device path$)
 PS1="%F{13}%n@%m %F{14}%~%F{8}%(!.#.\$)%f "
 
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PROG="/mnt/Programming/"

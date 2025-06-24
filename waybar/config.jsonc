@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "mpris",
+        "mpris"
     ],
     "modules-center": [
         "clock"
@@ -49,7 +49,7 @@
         "status-icons": {
             "playing": "",
             "paused": ""
-        },
+        }
     },
     "tray": {
         // "icon-size": 21,
