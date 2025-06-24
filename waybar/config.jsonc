@@ -14,13 +14,18 @@
         "clock"
     ],
     "modules-right": [
-        "pulseaudio",
-        "cpu",
-        "memory",
-        "temperature",
-        "tray",
-        "custom/power"
+        "group/hardware",
+        "group/vol-power"
     ],
+    // Modules grouping
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature"]
+    },
+    "group/vol-power": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "tray", "custom/power"]
+    },
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -46,47 +51,14 @@
             "paused": ""
         },
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 6
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "Europe/Paris",
         "format": "{:%d.%m.%Y %H:%M:%S}",
-        "locale": "en_GB.UTF-8",
+        "locale": "en_US.UTF-8",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -109,11 +81,11 @@
         }
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "<span color='#3acbaf'> </span>{usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "<span color='#3acbaf'> </span>{}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -134,12 +106,12 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "<span color='#3acbaf'>{icon} </span>{volume}%",
+        "format-bluetooth": "<span color='3acbaf'>{icon}</span> {volume}%",
+        "format-bluetooth-muted": "<span color='3acbaf'> {icon}</span>",
+        "format-muted": "<span color='3acbaf'> </span>",
+        "format-source": " {volume}%",
+        "format-source-muted": "󰍭",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -150,13 +122,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/playing": {
-        "format": "{}",
-        "exec": "playing",
-        "interval": 1,
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
     },
     "custom/power": {
         "format" : "⏻",

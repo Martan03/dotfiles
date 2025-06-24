@@ -2,29 +2,29 @@
 
 # general packages
 sudo pacman -Syu --needed base-devel clang composer discord dotnet-sdk ffmpeg \
-	firefox git glibc libc++ lldb llvm neofetch nodejs npm obs-studio php \
-	steam texlive texlive-langczechslovak ttf-cascadia-code vlc fd lazygit \
+	firefox git glibc libc++ lldb llvm nodejs npm obs-studio php \
+	texlive texlive-langczechslovak ttf-cascadia-code vlc fd lazygit \
 	neovim zsh
 
 # editing packages
 sudo pacman -S --needed gimp kdenlive
 
 # KDE related packages
-sudo pacman -S --needed gwenview noto-fonts-emoji-apple spectacle
+sudo pacman -S --needed gwenview
 
-if type yay &>/dev/null; then
+if ! type yay &>/dev/null; then
 	# yay install
-	git clone https://aur.archlinux.org/yay.git &&
-		cd yay &&
-		makepkg -si &&
-		cd ..
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ..
 fi
 
 # yay packages
 yay -S --needed makeit symfony-cli visual-studio-code-bin \
-	ttf-cascadia-code-nerd
+	ttf-cascadia-code-nerd ttf-apple-emoji
 
-if type cargo &>/dev/null; then
+if ! type cargo &>/dev/null; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
