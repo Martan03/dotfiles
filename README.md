@@ -1,14 +1,18 @@
 # dotfiles
 
-## Installation
+My dotfiles for configuring (almost) everything.
 
-You can run `install.sh` script to install packages I use
-*(not every package, but only packages I want to install every time)*.
+## Scripts
 
-The script also copies the config files and sets up other programs I use
-*(such as `zsh`)*.
+`scripts` folder contains scripts I made. Usage of each script is written in
+the comments inside of each script. You can read more about the scripts in the
+`README.md` file inside of the `scripts` folder.
 
-## Usage
+## Packages
+
+If you want to install packages I want to install every time *(not every*
+*package I use)*, you can then use the `install.sh` script. It installs the
+packages and copies the configuration files into the config directory.
 
 You will probably need to allow the installation script to run by running:
 ```bash
@@ -19,12 +23,6 @@ Then you can run the script itself:
 ```
 ./install.sh
 ```
-
-## Scripts
-
-`scripts` folder contains scripts I made. Usage of each script is written in
-the comments inside of each script. You can read more about the scripts in the
-`README.md` file inside of the `scripts` folder.
 
 ## Links
 

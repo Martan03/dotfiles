@@ -45,4 +45,10 @@ curl -L -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/typedark.zsh-theme \
 
 cp .zshrc ~/.zshrc
 cp .bashrc ~/.bashrc
-cp -r nvim ~/.config/nvim
+
+# Copies all the config folder to config directory
+folders=(fastfetch hypr kitty mako nvim rofi waybar)
+mkdir test
+for folder in "${folders[@]}"; do
+	cp -r "$folder" ~/.config
+done
