@@ -21,8 +21,8 @@ Item {
 
         icon {
             source: Qt.resolvedUrl(iconSource)
-            height: parent.height
-            width: parent.width
+            height: 18
+            width: 18
             color: config.foreground
         }
 

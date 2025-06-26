@@ -2,7 +2,7 @@
 Name=Kumuhana SDDM
 Description=hyprlock styled kumuhana theme for SDDM
 Type=sddm-theme
-Version=2.1
+Version=0.1
 Screenshot=preview.png
 MainScript=Main.qml
 ConfigFile=theme.conf

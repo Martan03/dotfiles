@@ -6,14 +6,14 @@ TextField {
     focus: true
     selectByMouse: true
     placeholderText: "Input password..."
+    placeholderTextColor: config.foreground
     echoMode: TextInput.Password
     passwordCharacter: "•"
     passwordMaskDelay: config.PasswordShowLastLetter
     selectionColor: config.selection
     renderType: Text.NativeRendering
     font.family: config.Font
-    font.pointSize: config.FontSize
-    font.bold: true
+    font.pointSize: 14
     color: config.foreground
     horizontalAlignment: TextInput.AlignHCenter
     width: 200

@@ -1,48 +1,49 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
+import Qt5Compat.GraphicalEffects
 
 import "components"
 
 Item {
     id: root
-
-    height: Screen.height
     width: Screen.width
-    
+    height: Screen.height
+
     Rectangle {
         id: background
         anchors.fill: parent
         z: 0
-        color: config.base
+        color: config.background
     }
-    
+
     Image {
         id: backgroundImage
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
-        visible: true
-        source: config.Background  // Path to your wallpaper
-        asynchronous: false
+        visible: false
+        source: config.Background
         cache: true
         mipmap: true
         clip: true
     }
-    
+
+    FastBlur {
+        anchors.fill: parent
+        source: backgroundImage
+        radius: 64
+    }
+
     Item {
         id: mainPanel
-        z: 3
-        anchors.fill: parent  // Fill the parent without margins
+        anchors.fill: parent
+        z: 2
 
         Clock {
-            id: time
             visible: config.ClockEnabled == "true"
         }
-        
         LoginPanel {
-            id: loginPanel
             anchors.fill: parent
         }
     }
 }
-
