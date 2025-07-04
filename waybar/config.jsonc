@@ -37,7 +37,7 @@
         }
     },
     "mpris": {
-        "format": "{status_icon} {artist} - {title}",
+        "format": "<span color='#3acbaf'>{status_icon}</span> {artist} - {title}",
         "players": ["firefox", "spotify"],
         "player-icons": {
             "firefox": "",
@@ -106,12 +106,12 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span color='#3acbaf'>{icon} </span>{volume}%",
+        "format": "<span color='#3acbaf'>{icon} </span>{volume}%{format_source}",
         "format-bluetooth": "<span color='3acbaf'>{icon}</span> {volume}%",
         "format-bluetooth-muted": "<span color='3acbaf'> {icon}</span>",
         "format-muted": "<span color='3acbaf'> </span>",
-        "format-source": " {volume}%",
-        "format-source-muted": "󰍭",
+        "format-source": "",
+        "format-source-muted": " <span color='#3acbaf'>󰍭</span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
