@@ -1,6 +1,8 @@
 # dotfiles
 
-My dotfiles for configuring (almost) everything.
+My dotfiles for configuring (almost) everything in my Arch + Hyprland setup.
+
+![Dotfiles demo](demo.gif)
 
 ## Scripts
 
