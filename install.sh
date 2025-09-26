@@ -47,7 +47,7 @@ cp .zshrc ~/.zshrc
 cp .bashrc ~/.bashrc
 
 # Copies all the config folder to config directory
-folders=(fastfetch hypr kitty mako nvim rofi waybar)
+folders=(fastfetch hypr kitty mako nvim rofi waybar sddm)
 mkdir test
 for folder in "${folders[@]}"; do
 	cp -r "$folder" ~/.config

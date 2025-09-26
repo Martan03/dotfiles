@@ -1,0 +1,78 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "base_keymap": "VSCode",
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "show_whitespaces": "trailing",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "debugger": {
+    "dock": "left"
+  },
+  "agent": { "button": false },
+  "title_bar": { "show_branch_icon": true },
+  "minimap": {
+    "show": "auto"
+  },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+    "show_diagnostics": "all"
+  },
+  "project_panel": {
+    "indent_size": 15,
+    "hide_root": true
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "format_on_save": "on",
+  "wrap_guides": [79],
+  "inlay_hints": {
+    "toggle_on_modifiers_press": {
+      "alt": true,
+      "control": true
+    }
+  },
+  "relative_line_numbers": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 15,
+  "buffer_font_size": 14,
+  "buffer_font_family": "Cascadia Code",
+  "buffer_font_features": {
+    "calt": true
+  },
+  "terminal": {
+    "line_height": "standard",
+    "toolbar": {
+      "breadcrumbs": false
+    },
+    "font_family": "Cascadia Code"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "TypeDark Kumuhana"
+  }
+}
