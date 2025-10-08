@@ -14,7 +14,7 @@ run_rofi() {
 choice=$(printf "$suspend\n$shutdown\n$reboot" | run_rofi)
 
 case "$choice" in
-$shutdown) shutdown now ;;
+$shutdown) systemctl poweroff -i ;;
 $reboot) systemctl reboot -i ;;
 $suspend)
 	hyprlock &

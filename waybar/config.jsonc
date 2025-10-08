@@ -24,7 +24,7 @@
     },
     "group/vol-power": {
         "orientation": "horizontal",
-        "modules": ["pulseaudio", "tray", "custom/power"]
+        "modules": ["pulseaudio", "battery", "tray", "custom/power"]
     },
     // Modules configuration
     "hyprland/workspaces": {
@@ -92,12 +92,12 @@
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format": "<span color='#3acbaf'>{icon}</span>{temperatureC}°C",
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -122,6 +122,18 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+        	"warning": 30,
+        	"critical": 15
+        },
+        "format": "<span color='#3acbaf'>{icon}</span>{capacity}% ",
+        "format-charging": "<span color='#3acbaf'>{icon}󱐋</span>{capacity}% ",
+        "format-plugged": "<span color='#3acbaf'>{icon}󱐋</span>{capacity}% ",
+        "format-alt": "{time} {icon} ",
+        "format-full": "<span color='#3acbaf'> </span>{capacity}% ",
+        "format-icons": [" ", " ", " ", " "]
     },
     "custom/power": {
         "format" : "⏻",
