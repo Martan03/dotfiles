@@ -1,0 +1,21 @@
+backend = "wal"
+color_space = "labmixed"
+
+palette = "dark16"
+check_constrast = true
+
+[templates]
+hypr.template = 'hypr-colors.conf'
+hypr.target = '~/.config/hypr/colors.conf'
+
+rofi.template = 'rofi-colors.rasi'
+rofi.target = '~/.config/rofi/themes/colors.rasi'
+
+waybar.template = 'waybar-colors.css'
+waybar.target = '~/.config/waybar/colors.css'
+
+waybar-conf.template = 'waybar-config.jsonc'
+waybar-conf.target = '~/.config/waybar/config.jsonc'
+
+kitty.template = 'kitty-colors.conf'
+kitty.target = '~/.config/kitty/colors.conf'

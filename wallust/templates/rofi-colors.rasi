@@ -1,0 +1,10 @@
+* {
+    background: {{ background | darken(0.2) }};
+    trans-background: {{ background | darken(0.2) }}bb;
+    background-alt: {{ color0 }};
+    background-light: {{ color8 }};
+    foreground: {{ foreground | lighten(0.4) }};
+    selected: {{ color14 }};
+    active: {{ color4 }};
+    urgent: {{ color5 }};
+}

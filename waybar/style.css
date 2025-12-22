@@ -1,8 +1,9 @@
-@define-color background #1a1b26;
+@import "colors.css";
+/*@define-color background #1a1b26;
 @define-color background-light #24283b;
 @define-color foreground #c0caf5;
 @define-color active #3acbaf;
-@define-color disabled #1e6d5d;
+@define-color disabled #1e6d5d;*/
 
 * {
     font-family: "CaskaydiaCove NF", FontAwesome, sans-serif;
@@ -16,19 +17,23 @@ window {
 
 window#waybar {
     background-color: transparent;
-    color: @foreground;
+    color: @fg;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-#workspaces, #mpris, .modules-center, #hardware, #vol-power {
-    background-color: @background;
+#workspaces,
+#mpris,
+.modules-center,
+#hardware,
+#vol-power {
+    background-color: @bg;
     border-radius: 15px;
-    border-top: 1px solid @disabled;
+    border-top: 1px solid @border;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -69,20 +74,22 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: @background-light;
+    background: @bgl;
     box-shadow: none;
 }
 
-#workspaces button.active, #workspaces button.visible {
-    background-color: @active;
-    color: @background;
+#workspaces button.active,
+#workspaces button.visible {
+    background-color: @prim;
+    color: @bg;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#custom-playing, #mpris {
+#custom-playing,
+#mpris {
     padding: 3px 10px;
     margin-left: 5px;
 }
@@ -92,7 +99,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -103,15 +110,17 @@ button:hover {
 #custom-power,
 #mpd {
     padding: 0 10px;
-    color: @foreground;
+    color: @fg;
 }
 
 #hardware {
     padding: 0 5px;
 }
 
-#cpu, #memory, #temperature {
-    color: @foreground;
+#cpu,
+#memory,
+#temperature {
+    color: @fg;
     padding: 0 5px;
 }
 
@@ -121,7 +130,7 @@ button:hover {
 
 #clock {
     padding-top: 1px;
-    color: @foreground;
+    color: @fg;
 }
 
 @keyframes blink {
@@ -132,7 +141,7 @@ button:hover {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @bg;
 }
 
 #tray > .passive {
@@ -141,7 +150,8 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @err_bg;
+    color: @err_fg;
 }
 
 #custom-power {
@@ -149,4 +159,3 @@ label:focus {
     padding: 0;
     min-width: 15px;
 }
-

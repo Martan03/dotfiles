@@ -1,0 +1,7 @@
+@define-color bg {{ background | darken(0.2) }};
+@define-color bgl {{ color0 }};
+@define-color fg {{ foreground | lighten(0.4) }};
+@define-color border {{ cursor }};
+@define-color prim {{ color14 }};
+@define-color err_bg {{ color1 }};
+@define-color err_fg {{ background | darken(0.2) }};

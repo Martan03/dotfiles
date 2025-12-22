@@ -1,0 +1,98 @@
+@import "colors.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    transparency: "real";
+    width: 60%;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: @selected;
+    background-color: @trans-background;
+}
+
+mainbox {
+    spacing: 15px;
+    margin: 0px;
+    padding: 20px;
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: transparent;
+    text-color: @foreground;
+    padding: 5px;
+    children: [ "entry" ];
+}
+
+listview {
+    columns: 4;
+    lines: 1;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: false;
+    fixed-columns: true;
+    spacing: 20px;
+    background-color: transparent;
+    text-color: @foreground;
+    border: 0;
+}
+
+element {
+    orientation: vertical;
+    expand: false;
+    spacing: 0px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background-color: #00000060;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: #00000060;
+}
+element alternate.normal {
+    background-color: #00000060;
+}
+
+element normal.urgent {
+    background-color: #22000060;
+}
+element alternate.urgent {
+    background-color: #22000060;
+}
+
+element normal.active {
+    background-color: @active;
+}
+element alternate.active {
+    background-color: @active;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+}
+
+element-icon {
+    size: 250px;
+    cursor: inherit;
+    expand: false;
+    padding: 0px;
+    background-color: #00000000;
+    border-radius: 5px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element-text {
+    cursor: inherit;
+    background-color: transparent;
+    padding-left: 10px;
+}

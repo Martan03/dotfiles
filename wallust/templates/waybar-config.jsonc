@@ -6,25 +6,17 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "mpris"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "group/hardware",
-        "group/vol-power"
-    ],
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["clock"],
+    "modules-right": ["group/hardware", "group/vol-power"],
     // Modules grouping
     "group/hardware": {
         "orientation": "horizontal",
-        "modules": ["cpu", "memory", "temperature"]
+        "modules": ["cpu", "memory", "temperature"],
     },
     "group/vol-power": {
         "orientation": "horizontal",
-        "modules": ["pulseaudio", "battery", "tray", "custom/power"]
+        "modules": ["pulseaudio", "battery", "tray", "custom/power"],
     },
     // Modules configuration
     "hyprland/workspaces": {
@@ -33,27 +25,27 @@
         "warp-on-scroll": false,
         "persistent-workspaces": {
             "DP-3": [1, 2, 3],
-            "DVI-D-1": [4, 5, 6]
-        }
+            "DVI-D-1": [4, 5, 6],
+        },
     },
     "mpris": {
-        "format": "<span color='#3acbaf'>{status_icon}</span> {artist} - {title}",
+        "format": "<span color='{{ color14 }}'>{status_icon}</span> {artist} - {title}",
         "players": ["firefox", "spotify"],
         "player-icons": {
             "firefox": "",
-            "spotify": ""
+            "spotify": "",
         },
         "on-click": "playerctl play-pause",
         "interval": 0,
         "max-length": 40,
         "status-icons": {
             "playing": "",
-            "paused": ""
-        }
+            "paused": "",
+        },
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 6
+        "spacing": 6,
     },
     "clock": {
         "timezone": "Europe/Paris",
@@ -71,29 +63,29 @@
                 "days": "<span color='#ecc6d9'><b>{}</b></span>",
                 "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
                 "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+            },
         },
         "actions": {
             "on-click-right": "mode",
             "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
+            "on-scroll-down": "shift_down",
+        },
     },
     "cpu": {
-        "format": "<span color='#3acbaf'> </span>{usage}%",
-        "tooltip": false
+        "format": "<span color='{{ color14 }}'> </span>{usage}%",
+        "tooltip": false,
     },
     "memory": {
-        "format": "<span color='#3acbaf'> </span>{}%"
+        "format": "<span color='{{ color14 }}'> </span>{}%",
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "<span color='#3acbaf'>{icon}</span>{temperatureC}°C",
-        "format-icons": ["", "", "", "", ""]
+        "format": "<span color='{{ color14 }}'>{icon}</span>{temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -102,16 +94,16 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span color='#3acbaf'>{icon} </span>{volume}%{format_source}",
-        "format-bluetooth": "<span color='#3acbaf'>{icon}</span> {volume}%",
-        "format-bluetooth-muted": "<span color='#3acbaf'> {icon}</span>",
-        "format-muted": "<span color='#3acbaf'>󰝟 {format_source}</span>",
+        "format": "<span color='{{ color14 }}'>{icon} </span>{volume}%{format_source}",
+        "format-bluetooth": "<span color='{{ color14 }}'>{icon}</span> {volume}%",
+        "format-bluetooth-muted": "<span color='{{ color14 }}'> {icon}</span>",
+        "format-muted": "<span color='{{ color14 }}'>󰝟 {format_source}</span>",
         "format-source": "",
-        "format-source-muted": " <span color='#3acbaf'>󰍭</span>",
+        "format-source-muted": " <span color='{{ color14 }}'>󰍭</span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -119,25 +111,25 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", ""],
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
     },
     "battery": {
         "states": {
-        	"warning": 30,
-        	"critical": 15
+            "warning": 30,
+            "critical": 15,
         },
-        "format": "<span color='#3acbaf'>{icon}</span>{capacity}% ",
-        "format-charging": "<span color='#3acbaf'>{icon}󱐋</span>{capacity}% ",
-        "format-plugged": "<span color='#3acbaf'>{icon}󱐋</span>{capacity}% ",
+        "format": "<span color='{{ color14 }}'>{icon}</span>{capacity}% ",
+        "format-charging": "<span color='{{ color14 }}'>{icon}󱐋</span>{capacity}% ",
+        "format-plugged": "<span color='{{ color14 }}'>{icon}󱐋</span>{capacity}% ",
         "format-alt": "{time} {icon} ",
-        "format-full": "<span color='#3acbaf'> </span>{capacity}% ",
-        "format-icons": [" ", " ", " ", " "]
+        "format-full": "<span color='{{ color14 }}'> </span>{capacity}% ",
+        "format-icons": [" ", " ", " ", " "],
     },
     "custom/power": {
-        "format" : "⏻",
-		"tooltip": false,
-	    "on-click": "power_menu"	
-    }
+        "format": "<span color='{{ color14 }}'>⏻</span>",
+        "tooltip": false,
+        "on-click": "power_menu",
+    },
 }
