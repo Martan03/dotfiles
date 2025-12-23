@@ -19,3 +19,12 @@ waybar-conf.target = '~/.config/waybar/config.jsonc'
 
 kitty.template = 'kitty-colors.conf'
 kitty.target = '~/.config/kitty/colors.conf'
+
+zed.template = 'zed-theme.json'
+zed.target = '~/.config/zed/themes/kumuhana.json'
+
+firefox.template = 'firefox-colors.css'
+firefox.target = '/home/martan03/.mozilla/firefox/71yscthf.default-release/chrome/colors.css'
+
+mako.template = 'mako.config'
+mako.target = '~/.config/mako/config'

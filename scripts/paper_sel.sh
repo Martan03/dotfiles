@@ -10,7 +10,6 @@ set -e
 
 THEME="$HOME/.config/rofi/themes/paper-picker.rasi"
 PAPER_DIR=${1:-/mnt/hdd/Images/Wallpapers}
-WAYBAR_RES="$HOME/.config/waybar/restart.sh"
 
 # Transition configuration
 TYPE="center"
@@ -56,7 +55,7 @@ awww query || awww-daemon --format xrgb
 
 choice=$(menu | run_rofi)
 choice=$(echo "$choice" | xargs)
-RND_PAPER_NAME=$(echo "$RND_PAPER_NAME" | xargs)
+RND_PACK_NAME=$(echo "$RND_PACK_NAME" | xargs)
 
 if [[ -z "$choice" ]]; then
     exit 0;
@@ -94,6 +93,9 @@ for i in "${!MONITORS[@]}"; do
     set_paper "${chosen[$i]}" "${MONITORS[$i]}" &
 done
 
-wallust run "${chosen[0]}" &
-wait
-$WAYBAR_RES
+sleep $(( DURATION / 2 ))
+wallust run "${chosen[0]}"
+sleep 0.2
+
+pkill -SIGUSR2 waybar
+makoctl reload

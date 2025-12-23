@@ -1,0 +1,9 @@
+:root {
+    --bg: {{ background | darken(0.2) }};
+    --bgl: {{ color0 }};
+    --fg: {{ foreground | lighten(0.4) }};
+    --border: {{ cursor }};
+    --prim: {{ color14 }};
+    --err_bg: {{ color1 }};
+    --err_fg: {{ background | darken(0.2) }};
+}
