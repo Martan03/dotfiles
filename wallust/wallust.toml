@@ -1,4 +1,4 @@
-backend = "wal"
+backend = "kmeans"
 color_space = "labmixed"
 
 palette = "dark16"

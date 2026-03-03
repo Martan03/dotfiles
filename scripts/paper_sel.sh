@@ -95,6 +95,7 @@ done
 
 sleep $(( DURATION / 2 ))
 wallust run "${chosen[0]}"
+matugen image "${chosen[0]}" --source-color-index 0
 sleep 0.2
 
 pkill -SIGUSR2 waybar

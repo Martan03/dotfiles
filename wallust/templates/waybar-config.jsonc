@@ -36,7 +36,7 @@
             "spotify": "",
         },
         "on-click": "playerctl play-pause",
-        "interval": 0,
+        "interval": 1,
         "max-length": 40,
         "status-icons": {
             "playing": "",
