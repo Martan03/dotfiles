@@ -1,0 +1,34 @@
+[templates.hypr]
+source = "hypr-colors.conf"
+target = "~/.config/hypr/colors.conf"
+
+[templates.waybar-colors]
+source = "waybar-colors.css"
+target = "~/.config/waybar/colors.css"
+hook = "pkill -SIGUSR2 waybar"
+
+[templates.waybar]
+source = "waybar-config.jsonc"
+target = "~/.config/waybar/config.jsonc"
+hook = "pkill -SIGUSR2 waybar"
+
+[templates.firefox]
+source = "firefox-colors.css"
+target = "~/.mozilla/firefox/71yscthf.default-release/chrome/colors.css"
+
+[templates.rofi]
+source = "rofi-colors.rasi"
+target = "~/.config/rofi/themes/colors.rasi"
+
+[templates.kitty]
+source = "kitty-colors.conf"
+target = "~/.config/kitty/colors.conf"
+
+[templates.mako]
+source = "mako.config"
+target = "~/.config/mako/config"
+hook = "makoctl reload"
+
+[templates.zed]
+source = "zed-theme.json"
+target = "~/.config/zed/themes/kumuhana.json"

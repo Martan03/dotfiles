@@ -1,0 +1,7 @@
+@define-color bg {{ surface }};
+@define-color bgl {{ border }};
+@define-color fg {{ foreground.lighten(0.4) }};
+@define-color border {{ primary.darken(0.2) }};
+@define-color prim {{ primary }};
+@define-color err_bg {{ error }};
+@define-color err_fg {{ background.darken(0.2) }};

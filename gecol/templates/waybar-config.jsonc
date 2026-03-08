@@ -1,0 +1,135 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["clock"],
+    "modules-right": ["group/hardware", "group/vol-power"],
+    // Modules grouping
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature"],
+    },
+    "group/vol-power": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "battery", "tray", "custom/power"],
+    },
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "persistent-workspaces": {
+            "DP-3": [1, 2, 3],
+            "DVI-D-1": [4, 5, 6],
+        },
+    },
+    "mpris": {
+        "format": "<span color='{{ primary }}'>{status_icon}</span> {artist} - {title}",
+        "players": ["firefox", "spotify"],
+        "player-icons": {
+            "firefox": "",
+            "spotify": "",
+        },
+        "on-click": "playerctl play-pause",
+        "interval": 1,
+        "max-length": 40,
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+        },
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 6,
+    },
+    "clock": {
+        "timezone": "Europe/Paris",
+        "format": "{:%d.%m.%Y %H:%M:%S}",
+        "locale": "en_US.UTF-8",
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+            },
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+        },
+    },
+    "cpu": {
+        "format": "<span color='{{ primary }}'> </span>{usage}%",
+        "tooltip": false,
+    },
+    "memory": {
+        "format": "<span color='{{ primary }}'> </span>{}%",
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "<span color='{{ primary }}'>{icon}</span>{temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "<span color='{{ primary }}'>{icon} </span>{volume}%{format_source}",
+        "format-bluetooth": "<span color='{{ primary }}'>{icon}</span> {volume}%",
+        "format-bluetooth-muted": "<span color='{{ primary }}'> {icon}</span>",
+        "format-muted": "<span color='{{ primary }}'>󰝟 {format_source}</span>",
+        "format-source": "",
+        "format-source-muted": " <span color='{{ primary }}'>󰍭</span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""],
+        },
+        "on-click": "pavucontrol",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "<span color='{{ primary }}'>{icon}</span>{capacity}% ",
+        "format-charging": "<span color='{{ primary }}'>{icon}󱐋</span>{capacity}% ",
+        "format-plugged": "<span color='{{ primary }}'>{icon}󱐋</span>{capacity}% ",
+        "format-alt": "{time} {icon} ",
+        "format-full": "<span color='{{ primary }}'> </span>{capacity}% ",
+        "format-icons": [" ", " ", " ", " "],
+    },
+    "custom/power": {
+        "format": "<span color='{{ primary }}'>⏻</span>",
+        "tooltip": false,
+        "on-click": "power_menu",
+    },
+}

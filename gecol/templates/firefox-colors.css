@@ -1,0 +1,9 @@
+:root {
+    --bg: {{ background }};
+    --bgl: {{ surface }};
+    --fg: {{ foreground }};
+    --border: {{ primary.darken(0.2) }};
+    --prim: {{ primary }};
+    --err_bg: {{ error }};
+    --err_fg: {{ background.darken(0.2) }};
+}
