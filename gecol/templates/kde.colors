@@ -1,0 +1,149 @@
+[ColorEffects:Disabled]
+Color={{ surface.dim(0.1).hex }}
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color={{ surface.darken(0.05).hex }}
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate={{ surface.darken(0.02).hex }}
+BackgroundNormal={{ surface.lighten(0.05).hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Complementary]
+BackgroundAlternate={{ surface.darken(0.02).hex }}
+BackgroundNormal={{ surface.hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Header]
+BackgroundAlternate={{ surface.hex }}
+BackgroundNormal={{ surface.lighten(0.02).hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Header][Inactive]
+BackgroundAlternate={{ surface.lighten(0.02).hex }}
+BackgroundNormal={{ surface.hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Selection]
+BackgroundAlternate={{ surface.darken(0.02).hex }}
+BackgroundNormal={{ primary.hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ background.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.lighten(0.1).hex }}
+ForegroundNegative={{ error.dim(0.2).hex }}
+ForegroundNeutral={{ success.dim(0.2).hex }}
+ForegroundNormal={{ background.hex }}
+ForegroundPositive={{ success.darken(0.2).hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Tooltip]
+BackgroundAlternate={{ surface.hex }}
+BackgroundNormal={{ surface.lighten(0.02).hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:View]
+BackgroundAlternate={{ surface.lighten(0.02).hex }}
+BackgroundNormal={{ background.hex }}
+DecorationFocus={{ foreground.hex }}
+DecorationHover={{ background.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[Colors:Window]
+BackgroundAlternate={{ primary.dim(0.3).hex }}
+BackgroundNormal={{ surface.lighten(0.02).hex }}
+DecorationFocus={{ primary.hex }}
+DecorationHover={{ primary.hex }}
+ForegroundActive={{ primary.hex }}
+ForegroundInactive={{ muted.hex }}
+ForegroundLink={{ secondary.hex }}
+ForegroundNegative={{ error.hex }}
+ForegroundNeutral={{ primary.desaturate(0.2).hex }}
+ForegroundNormal={{ foreground.hex }}
+ForegroundPositive={{ success.hex }}
+ForegroundVisited={{ muted.hex }}
+
+[General]
+ColorScheme=Gecol
+Name=Gecol
+
+[Appearance]
+color_scheme=Gecol
+
+[KDE]
+contrast=4
+
+[WM]
+activeBackground={{ primary.dim(0.3).hex }}
+activeBlend={{ foreground.hex }}
+activeForeground={{ foreground.hex }}
+inactiveBackground={{ surface.hex }}
+inactiveBlend={{ muted.hex }}
+inactiveForeground={{ muted.hex }}

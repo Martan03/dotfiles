@@ -95,4 +95,4 @@ done
 
 sleep $(( DURATION / 2 ))
 gecol run "${chosen[0]}"
-matugen image "${chosen[0]}" --source-color-index 0
+# matugen image "${chosen[0]}" --source-color-index 0
