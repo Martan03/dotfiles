@@ -69,8 +69,12 @@
 
     --icon-strong: var(--gecol-primary);
     --icon-muted: {{ primary.dim(0.4).desaturate(0.02) }};
+    --icon-subtle: {{ primary.dim(0.15) }};
 
     --app-frame-border: var(--gecol-primary-dark);
+
+    --input-border-default: var(--icon-muted);
+    --interactive-text-default: var(--icon-muted);
 }
 
 .childWrapper__6e9f8 svg,
@@ -78,8 +82,8 @@
     color: var(--gecol-primary);
 }
 
-.circleIconButton__5bc7e:hover svg,
-.childWrapper__6e9f8:hover svg {
+.circleIconButton__5bc7e.selected__5bc7e svg,
+.selected__6e9f8 svg {
     color: var(--gecol-surface);
 }
 
