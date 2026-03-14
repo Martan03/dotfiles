@@ -1,0 +1,100 @@
+/**
+ * @name GecolTheme
+ * @author Martan03
+ * @description Dynamically generated accent theme powered by gecol.
+ */
+
+.theme-dark, .theme-light {
+    --gecol-primary: {{ primary }};
+    --gecol-primary-dark: {{ primary.darken(0.2) }};
+    --gecol-secondary: {{ secondary }};
+
+    --gecol-background: {{ background }};
+    --gecol-surface: {{ surface }};
+    --gecol-border: {{ border }};
+
+    --gecol-foreground: {{ foreground }};
+    --gecol-muted: {{ muted }};
+
+    --gecol-success: {{ success }};
+    --gecol-warning: {{ warning }};
+    --gecol-error: {{ error }};
+
+    /* Backgrounds */
+    --background-primary: {{ background }}; /* Main chat */
+    --background-secondary: {{ surface }}; /* Server sidebar & channel list */
+    --background-secondary-alt: {{ surface.lighten(0.02) }};
+    --background-tertiary: {{ surface.darken(0.05) }}; /* Server icon column */
+    --background-floating: {{ surface.lighten(0.05) }}; /* Popouts and menus */
+    --background-brand: {{ primary }};
+
+    /* Text */
+    --text-normal: {{ foreground }};
+    --text-muted: {{ muted }};
+    --text-link: {{ secondary }};
+    --header-primary: {{ foreground }};
+    --header-secondary: {{ muted }};
+    --interactive-normal: {{ muted }};
+    --interactive-hover: {{ foreground }};
+    --interactive-active: {{ foreground }};
+
+    /* Brand / Accents (Replaces Discord's 'Blurple') */
+    --brand-experiment: {{ primary }};
+    --brand-experiment-hover: {{ primary.lighten(0.1) }};
+    --brand-experiment-active: {{ primary.darken(0.1) }};
+    --brand-experiment-500: {{ primary }}; /* Used in various forced-opacity places */
+
+    /* Buttons */
+    --button-primary-background: {{ primary }};
+    --button-primary-background-hover: {{ primary.lighten(0.1) }};
+    --button-primary-background-active: {{ primary.darken(0.1) }};
+    --button-secondary-background: {{ surface.lighten(0.05) }};
+    --button-secondary-background-hover: {{ surface.lighten(0.1) }};
+    --button-secondary-background-active: {{ surface.darken(0.05) }};
+    --button-danger-background: {{ error }};
+
+    /* Status Colors */
+    --info-positive-text: {{ success }};
+    --info-warning-text: {{ warning }};
+    --info-danger-text: {{ error }};
+    --text-danger: {{ error }};
+    --text-warning: {{ warning }};
+    --text-positive: {{ success }};
+
+    /* Scrollbars */
+    --scrollbar-auto-thumb: {{ surface.lighten(0.15) }};
+    --scrollbar-auto-track: {{ surface.darken(0.02) }};
+    --scrollbar-thin-thumb: {{ surface.lighten(0.15) }};
+    --scrollbar-thin-track: transparent;
+
+    --icon-strong: var(--gecol-primary);
+    --icon-muted: {{ primary.dim(0.4).desaturate(0.02) }};
+
+    --app-frame-border: var(--gecol-primary-dark);
+}
+
+.childWrapper__6e9f8 svg,
+.circleIconButton__5bc7e svg {
+    color: var(--gecol-primary);
+}
+
+.circleIconButton__5bc7e:hover svg,
+.childWrapper__6e9f8:hover svg {
+    color: var(--gecol-surface);
+}
+
+span.item__58105 {
+    background-color: var(--gecol-primary);
+}
+
+.icon__2ea32 {
+    color: var(--icon-muted);
+}
+
+.modeSelected__2ea32:hover .icon__2ea32 {
+    color: var(--gecol-primary);
+}
+
+.icon__0c4c4 {
+    color: var(--gecol-primary-dark);
+}
