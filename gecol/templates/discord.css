@@ -75,6 +75,17 @@
 
     --input-border-default: var(--icon-muted);
     --interactive-text-default: var(--icon-muted);
+    --interactive-icon-hover: var(--icon-subtle);
+    --interactive-text-active: var(--icon-subtle);
+
+    /* Button */
+    --control-primary-background-default: var(--gecol-primary);
+    --control-primary-background-hover: var(--gecol-primary-dark);
+    --status-positive-text: var(--gecol-surface);
+
+    --custom-input-hover-border-color: var(--gecol-primary);
+
+    --badge-expressive-background-default: var(--gecol-primary);
 }
 
 .childWrapper__6e9f8 svg,
@@ -101,4 +112,13 @@ span.item__58105 {
 
 .icon__0c4c4 {
     color: var(--gecol-primary-dark);
+}
+
+.button__24af7:hover,
+.actionButton_f8fa06:hover {
+    color: var(--icon-subtle);
+}
+
+.tabBar__133bf .addFriend__133bf.addFriend__133bf.addFriend__133bf {
+    color: var(--gecol-surface);
 }
