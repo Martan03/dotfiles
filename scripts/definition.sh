@@ -42,13 +42,13 @@ echo "$query" | jq -r '
     ( $entry.meanings[] |
         "  [\(.partOfSpeech)]" + (
             if (.synonyms | length) > 0 then
-                " \u001b[30m~ " + (.synonyms | join(", ")) + "\u001b[0m"
+                " \u001b[90m~ " + (.synonyms | join(", ")) + "\u001b[0m"
             else
                 ""
             end
         ),
         ( .definitions | to_entries[] |
-            "    \u001b[30m\u001b[1m\((.key + 1)).\u001b[0m " +
+            "    \u001b[90m\u001b[1m\((.key + 1)).\u001b[0m " +
             "\u001b[37m\(.value.definition)\u001b[0m"
         )
     )
