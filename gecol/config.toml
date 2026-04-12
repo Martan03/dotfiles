@@ -35,7 +35,7 @@ target = "~/.config/zed/themes/kumuhana.json"
 
 [templates.kdeglobals]
 source = "kde.colors"
-target = "~/.local/share/color-schemes/matugen.colors"
+target = "~/.local/share/color-schemes/Gecol.colors"
 
 [templates.discord]
 source = "discord.css"

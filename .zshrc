@@ -32,6 +32,7 @@ export EDITOR=nvim
 # Aliases
 alias vim=nvim
 alias weather='curl -s "wttr.in/Brno?F"';
+alias v='cliphist list | head -n 1 | cliphist decode'
 
 # Functions
 
@@ -77,4 +78,3 @@ function symfony-server() {
     symfony server:stop
     symfony server:start -d
 }
-
