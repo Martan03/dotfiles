@@ -6,28 +6,28 @@
 # `./definition.sh <word>`
 
 function eprint() {
-    >&2 echo -e "\x1b[91mError:\x1b[0m $1";
+	>&2 echo -e "\x1b[91mError:\x1b[0m $1"
 }
 
 # Checks if word is empty or contains special characters
 if [[ -z "$1" || "$1" =~ [\/] ]]; then
-    eprint "Invalid input";
-    exit 1;
+	eprint "Invalid input"
+	exit 1
 fi
 
 query=$(curl -s --connect-timeout 5 --max-time 10 \
-    "https://api.dictionaryapi.dev/api/v2/entries/en/$1");
+	"https://api.dictionaryapi.dev/api/v2/entries/en/$1")
 
 # Checks connection error
 if [ $? -ne 0 ]; then
-    eprint "Connection error";
-    exit 1;
+	eprint "Connection error"
+	exit 1
 fi
 
 # Checks invalid word response
 if [[ "$query" == *"No Definitions Found"* ]]; then
-    eprint "Invalid word";
-    exit 1;
+	eprint "Invalid word"
+	exit 1
 fi
 
 echo "$query" | jq -r '
@@ -37,8 +37,8 @@ echo "$query" | jq -r '
       | unique
       | join(" ")
     ) as $phonetics
-    | "\u001b[1m\u001b[97m\($entry.word)\u001b[0m \($phonetics)\n",
-    "\u001b[4mDefinitions:\u001b[0m",
+    | "\u001b[1m\u001b[97m\($entry.word)\u001b[0m \u001b[3m\($phonetics)",
+    "\u001b[0m\n\u001b[4mDefinitions:\u001b[0m",
     ( $entry.meanings[] |
         "  [\(.partOfSpeech)]" + (
             if (.synonyms | length) > 0 then
@@ -52,4 +52,4 @@ echo "$query" | jq -r '
             "\u001b[37m\(.value.definition)\u001b[0m"
         )
     )
-';
+'

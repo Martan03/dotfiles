@@ -16,7 +16,13 @@
     },
     "group/vol-power": {
         "orientation": "horizontal",
-        "modules": ["pulseaudio", "battery", "tray", "custom/power"],
+        "modules": [
+            "pulseaudio",
+            "battery",
+            "power-profiles-daemon",
+            "tray",
+            "custom/power",
+        ],
     },
     // Modules configuration
     "hyprland/workspaces": {
@@ -24,6 +30,7 @@
         "all-outputs": false,
         "warp-on-scroll": false,
         "persistent-workspaces": {
+            "eDP-1": [1, 2, 3],
             "DP-3": [1, 2, 3],
             "DVI-D-1": [4, 5, 6],
         },
@@ -125,7 +132,18 @@
         "format-plugged": "<span color='{{ primary }}'>{icon}󱐋</span>{capacity}% ",
         "format-alt": "{time} {icon} ",
         "format-full": "<span color='{{ primary }}'> </span>{capacity}% ",
-        "format-icons": [" ", " ", " ", " "],
+        "format-icons": [" ", " ", " ", " ", " "],
+    },
+    "power-profiles-daemon": {
+        "format": "<span color='{{ primary }}'>{icon} </span>",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": "",
+        },
     },
     "custom/power": {
         "format": "<span color='{{ primary }}'>⏻</span>",
