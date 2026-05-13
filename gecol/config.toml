@@ -1,6 +1,6 @@
 [templates.hypr]
-source = "hypr-colors.conf"
-target = "~/.config/hypr/colors.conf"
+source = "hypr-colors.lua"
+target = "~/.config/hypr/colors.lua"
 
 [templates.waybar-colors]
 source = "waybar-colors.css"
