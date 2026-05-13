@@ -77,7 +77,9 @@ end)
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 -- hl.env("XCURSOR_SIZE", "24")
-
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("XDG_MENU_PREFIX", "arch-")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -299,7 +301,7 @@ hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
-    local key = 9 + i 
+    local key = 9 + i
     hl.bind(mainMod .. " + code:" .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + code:" .. key, hl.dsp.window.move({ workspace = i }))
 end
