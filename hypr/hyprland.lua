@@ -273,7 +273,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("zeditor"))
 
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("power_menu"))
-hl.bind("PRINT", hl.dsp.exec_cmd("screenshot"))
+hl.bind("PRINT", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("clipboard"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("paper_sel"))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd(terminal .. " -e bash -c 'fastfetch; exec zsh'"))
